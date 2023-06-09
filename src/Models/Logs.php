@@ -186,15 +186,15 @@ class Logs
             }
 
             if (isset($result['message'])) {
-                $result['message'] = stripslashes(htmlspecialchars_decode($result['message']));
+                $result['message'] = stripslashes(htmlspecialchars_decode($result['message'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401));
             }
 
             if (isset($result['subject'])) {
-                $result['subject'] = stripslashes(htmlspecialchars_decode($result['subject']));
+                $result['subject'] = stripslashes(htmlspecialchars_decode($result['subject'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401));
             }
 
             if (isset($result['email_to'])) {
-                $result['email_to'] = stripslashes(htmlspecialchars_decode($result['email_to']));
+                $result['email_to'] = stripslashes(htmlspecialchars_decode($result['email_to'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401));
             }
 
             if (!empty($result['attachments'])) {
